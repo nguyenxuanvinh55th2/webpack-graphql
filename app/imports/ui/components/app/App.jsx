@@ -5,9 +5,12 @@ import ReactDOM from 'react-dom'
 export default class App extends Component {
   constructor(props){
     super(props);
+      this.state=({vinh:"tam"})
   }
   renderData(){
-    console.log(this.props);
+    console.log("data",this.props.data.tam);
+    // console.log("sate",this.state.vinh);
+
   }
   render() {
 

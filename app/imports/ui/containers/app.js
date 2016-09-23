@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import App from '../components/app/App.jsx'
 
 const SUBJECT = gql`
-  query tam {
+  query loadtam {
     tam {
     name
   }

@@ -1,17 +1,24 @@
 const path = require('path');
 const express = require('express');
 
+//webpack
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../../webpack.config.js');
 
+//graphql
 var typeDefs = require("../imports/api/schema.js")
 var resolvers = require("../imports/api/resolvers.js")
 
 var bodyParser = require('body-parser');
 var { apolloExpress, graphiqlExpress } = require('apollo-server');
 var { makeExecutableSchema } = require('graphql-tools');
+
+//connect database
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/test');
 
 var app = express();
 

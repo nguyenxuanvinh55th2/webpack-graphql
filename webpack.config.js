@@ -29,19 +29,30 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          cacheDirectory: true,
+          presets: [ 'es2015', 'react']
+        }
+      },
+      {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
         "presets": ["react", "es2015", "stage-0", "react-hmre"]
       }
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
+    },
+     {
       test: /\.css$/,
       loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
     }]
+  },
+  resolve:{
+    extensions: ['', '.js', '.jsx','css']
   }
 };

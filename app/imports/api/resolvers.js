@@ -1,13 +1,13 @@
+var User =require('./post/post.js');
 module.exports= {
   Query: {
     hello(root) {
       return 'world';
     },
     tam(root){
-      var ob ={
-        name:"vinh"
-      }
-      return ob;
+      var user = User.find({})
+      console.log("user",user);
+      return user;
     }
   },
   Mutation: {
