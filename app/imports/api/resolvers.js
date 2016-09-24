@@ -5,9 +5,12 @@ module.exports= {
       return 'world';
     },
     tam(root){
-      var user = User.find({})
-      console.log("user",user);
-      return user;
+      //Promise for client
+      return new Promise(function(resolve, reject){
+            User.find().exec().then(function(result) { //exect return Promise
+                resolve(result);
+            });
+        });
     }
   },
   Mutation: {

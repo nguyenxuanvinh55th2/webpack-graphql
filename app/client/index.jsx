@@ -1,6 +1,5 @@
 import React from 'react'
 import {render} from 'react-dom'
-
 import {ApolloProvider} from 'react-apollo'
 import apolloClient from '../imports/ui/apollo-client'
 

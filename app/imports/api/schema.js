@@ -4,7 +4,7 @@ type Vinh {
 }
 type Query {
   hello: String,
-  tam:Vinh
+  tam:[Vinh]
 },
 
 type Mutation {
