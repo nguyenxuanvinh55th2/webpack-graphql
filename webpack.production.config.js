@@ -38,7 +38,18 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          cacheDirectory: true,
+          presets: [ 'es2015', 'react'],
+          plugins: [ "transform-runtime" ]
+        }
+      },
+      {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel',

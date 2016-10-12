@@ -8,9 +8,23 @@ export default class App extends Component {
       this.state=({vinh:"tam"})
   }
   renderData(){
+    console.log("async",this.vinh());
     console.log("data",this.props.data.tam);
     // console.log("sate",this.state.vinh);
 
+  }
+  async vinh()
+  {
+    setTimeout(function() {
+    console.log('HELLO');
+    setTimeout(function() {
+        console.log("WORLD");
+        setTimeout(function(){
+            console.log('Rikky Handsome');
+        }, 1000)
+    }, 3000)
+}, 5000);
+    return await "vinh"
   }
   render() {
 

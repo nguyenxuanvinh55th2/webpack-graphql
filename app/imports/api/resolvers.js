@@ -5,7 +5,7 @@ module.exports= {
       return 'world';
     },
     tam(root){
-      //Promise for client
+      // Promise for client
       return new Promise(function(resolve, reject){
             User.find().exec().then(function(result) { //exect return Promise
                 resolve(result);
